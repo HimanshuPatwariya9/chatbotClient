@@ -5,11 +5,11 @@ export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-
+//http://localhost:1337/api/register
   async function registerUser(event) {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:1337/api/register", {
+      const response = await fetch("https://chatbotserver-a0wu.onrender.com/api/register", {
         method: 'post',
         headers: {
           'Content-type': 'application/json',

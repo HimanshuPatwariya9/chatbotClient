@@ -5,11 +5,11 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-
+//http://localhost:1337/api/login
   async function loginUser(event) {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:1337/api/login", {
+      const response = await fetch("https://chatbotserver-a0wu.onrender.com/api/login", {
         method: 'post',
         headers: {
           'Content-type': 'application/json',
