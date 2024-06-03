@@ -11,7 +11,6 @@ function App() {
   const [messageHistory, setMessageHistory] = useState([]);
   const [showCustomQuestionInput, setShowCustomQuestionInput] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [loadingButton, setLoadingButton] = useState(false);
   const sectors = ["Health", "Education", "Finance", "Agriculture", "Electricity", "Railway"];
 
   const preloadedQuestions = {
@@ -159,6 +158,14 @@ function App() {
 
   const imageUrl = "https://miro.medium.com/v2/resize:fit:750/format:webp/1*9I6EIL5NG20A8se5afVmOg.gif";
 
+  const renderers = {
+    link: ({ href, children }) => (
+      <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
+        {children}
+      </a>
+    ),
+  };
+
   return (
     <div className="flex flex-col h-screen bg-gray-100">
       <div className="bg-white p-4">
@@ -189,10 +196,10 @@ function App() {
             {messageHistory.slice(0).reverse().map((message, index) => (
               <div key={index} className="bg-blue-500 text-white rounded-lg shadow-md p-4 mb-4">
                 <div className="bg-sky-950 rounded-2xl p-4">
-                  <ReactMarkdown>{message.question}</ReactMarkdown>
+                  <ReactMarkdown components={renderers}>{message.question}</ReactMarkdown>
                 </div>
                 <div className="mt-2">
-                  <ReactMarkdown>{message.answer}</ReactMarkdown>
+                  <ReactMarkdown components={renderers}>{message.answer}</ReactMarkdown>
                 </div>
               </div>
             ))}
@@ -254,12 +261,6 @@ function App() {
           </div>
         </div>
       </div>
-
-      {loading && (
-        <div className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
-          <ClipLoader color="#ffffff" size={50} />
-        </div>
-      )}
     </div>
   );
 }
