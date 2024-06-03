@@ -125,7 +125,7 @@ function App() {
             {
               parts: [
                 {
-                  text: `Please provide an answer related to ${selectedSector} in 7 lines, if possible provide link to the source and only one link is sufficient, and link will be formated as{for more information- https///........ }. If not related to ${selectedSector} field or domain, respond with "Sorry - maybe not related to this sector ." ${questionToAsk}`,
+                  text: `Please provide an answer related to ${selectedSector} in 8 lines, if possible provide link to the source and only one link is sufficient, and link will be formated as{for more information- https///........ }. If not related to ${selectedSector} field or domain, respond with "Sorry - maybe not related to this sector ." ${questionToAsk}`,
                 },
               ],
             },
