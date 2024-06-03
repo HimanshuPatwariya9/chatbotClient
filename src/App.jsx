@@ -58,7 +58,7 @@ function App() {
       "What is Paramparagat Krishi Vikas Yojana",
       "What subsidies are available for purchasing agricultural machinery?",
       "How does soil health affect crop yield?",
-      "Can you provide information on government schemes for promoting farming?"",
+      "Can you provide information on government schemes for promoting farming?",
       "How can farmers manage pests naturally?",
       "What is the role of irrigation in agriculture?",
       "How do genetically modified organisms (GMOs) impact farming?"
